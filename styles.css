@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'InstrumentSerifI';
+    src: url('InstrumentSerif-Italic.ttf') format('truetype');
+    font-weight: 100 1000;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'InstrumentSerifR';
+    src: url('InstrumentSerif-Regular.ttf') format('truetype');
+    font-weight: 100 1000;
+    font-style: normal;
+}
+
+body {
+    font-family: InstrumentSerifI;
+    font-size: 30;
+  margin: 10;
+  padding: 0;
+  height: 50vh;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+h1 {
+    font-family: InstrumentSerifR;
+    font-size: 20px;
+}
+
+h2 {
+    font-family: InstrumentSerifI;
+    font-size: 20px;
+}
+
+
+main, section, otherContentSelectors {
+  position: relative; /* nécessaire pour que z-index fonctionne */
+  z-index: 1; /* devant les cercles */
+}
+
+html, body {
+  overflow: hidden; /* empêche le scroll global */
+  height: 100%; /* pour bien fixer la hauteur */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.scroll-layout {
+    display: flex;
+    height: 100vh;
+    /* hauteur fixe pour scroll */
+    gap: 2rem;
+}
+
+.scroll-column {
+    flex: 2;
+    overflow-y: auto;
+    padding-right: 2rem;
+    border-right: 1px solid black;
+}
+
+.scroll-column:first-child {
+    padding-left: 1rem;
+}
+
+
+.scroll-column:last-child {
+    flex: 3;
+    border-right: none;
+}
+
+
